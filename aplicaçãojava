@@ -1,0 +1,38 @@
+package atividade1;
+    import java.util.Scanner;
+/**
+ *
+ * @author hbdam
+ */
+public class Atividade1 {
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+       Scanner leia = new Scanner(System.in);
+       String Nomeproduto;
+       int preco;
+       int porcentagem;
+       int vdesconto;
+       int vfinal;
+        System.out.println("Insira o produto desejado e confirme com 'Enter'.");
+        Nomeproduto = leia.nextLine();
+        System.out.println("Qual é o preço de " + Nomeproduto + "?");
+        preco = leia.nextInt();
+        System.out.println("Qual será a porcentagem de desconto aplicada em " + Nomeproduto + "?");
+        porcentagem = leia.nextInt();
+        vdesconto = preco * porcentagem/100;
+        vfinal = preco - vdesconto;
+        if (porcentagem > 100){
+            System.out.println("Este valor não é válido. Inicie o cadastro novamente.");
+            System.exit(0);
+        } else {
+            System.out.println("O produto " + Nomeproduto + " está com um desconto de " + porcentagem + "% portanto o desconto será de R$" + vdesconto + ",00. Custando R$" + vfinal + ",00");
+        }
+                        
+    }
+    
+}
